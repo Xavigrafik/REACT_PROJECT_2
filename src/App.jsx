@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+
 import './css/App.css'
 
 import {Component1} from './components/Component1'
@@ -11,13 +12,13 @@ function App() {
 
   return (
     <>
-    
+
       <ComponentEvento value = {10} ></ComponentEvento>
 
       <Component1></Component1>
 
-      <Component2></Component2>
-      <Component2 titulo="titulo from App.js"></Component2>
+      <Component2 ></Component2>
+      <Component2 titulo="titulo from App.jsX"></Component2>
 
 
 

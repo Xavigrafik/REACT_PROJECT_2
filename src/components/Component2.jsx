@@ -20,6 +20,6 @@ Component2.defaultProps = {
   titulo: "titulo from defaultProps",
 }
 
-Component2.PropTypes = {
+Component2.propTypes = {
   titulo:PropTypes.string,
 };

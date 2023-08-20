@@ -7,11 +7,13 @@ import './css/App.css'
 import {Component1} from './components/Component1'
 import {Component2} from './components/Component2'
 import {ComponentEvento} from './components/ComponentEvento'
+import {Condicionales} from './components/Condicionales'
 
 function App() {
 
   return (
     <>
+      <Condicionales></Condicionales>
 
       <ComponentEvento value = {10} ></ComponentEvento>
 

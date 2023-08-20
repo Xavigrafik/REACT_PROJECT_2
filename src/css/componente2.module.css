@@ -1,0 +1,17 @@
+.componente2 {
+    transition: all ease-in-out 350ms;
+}
+.componente2:hover{
+    border: 1px solid teal;
+    color:yellow;
+}
+
+.h3 {
+    color: red;
+    transition: all ease-in-out 350ms;
+    cursor: pointer;
+}
+
+.h3:hover{
+   color:orange;
+}

@@ -13,32 +13,43 @@ export const Condicionales = () => {
     }
 
     let List = [
-        {nombre: "000", visto: true},
-        {nombre: "111", visto: true},
-        {nombre: "222", visto: false},
-        {nombre: "333", visto: true},
-        {nombre: "444", visto: false}
+        { id : 0, nombre: "000", visto: true},
+        { id : 1, nombre: "000", visto: true},
+        { id : 2, nombre: "111", visto: true},
+        { id : 3, nombre: "222", visto: false},
+        { id : 4, nombre: "333", visto: true},
+        { id : 5, nombre: "444", visto: false}
     ];
 
     const  [arrList, setArrList ] = useState(List);
 
     const addToList = ()=> {
-        setArrList([...arrList, {nombre: 'Desde Boton', visto:false} ]) // agrega un elemento al array
+        setArrList([...arrList, {id : arrList.length, nombre: 'Desde Boton', visto:false} ]) // agrega un elemento al array
     }
 
-    const onAddTask (val) => {
-        console.log(val);
+    const onAddTask = (val) => {
+        if (val < 1) {
+            console.error('Input vacio! ');
+            return
+        }
+        const envio = {
+            id : arrList.length,
+            nombre : val,
+            visto : false,
+        }
+
+        setArrList([...arrList, envio])
         
     }
 
     return (
         <div className='component'>
-            <h3>COMPONENT CONDICIONALES</h3>
+            <h3>COMPONENT CONDICIONALES {arrList.length}</h3>
 
-            <AgregarTareaForm addTask={setArrList}></AgregarTareaForm>
+            <AgregarTareaForm addTask={onAddTask}></AgregarTareaForm>
 
             <ul className="list-unstyled">
-                {arrList.map( item => <Item key={item.nombre} nombre={item.nombre} visto={item.visto}></Item>)}
+                {arrList.map( item => <Item key={item.id} nombre={item.nombre} visto={item.visto}></Item>)}
             </ul>
             <button className="btn btn-primary" onClick={()=>addToList()}>+ Add</button>
         </div>

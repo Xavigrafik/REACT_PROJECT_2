@@ -3,29 +3,19 @@ import { useState } from 'react';
 
 export const AgregarTareaForm = ({ addTask }) => {
 
-    const [inputValue, setInputValue] = useState('inputValue');
+    const [inputValue, setInputValue] = useState('');
 
     const onInputChange = (e) => {
         setInputValue(e.target.value)
     }
 
     const onSubmit = (e) => {
-        const envio = {
-            nombre : inputValue,
-            visto : false,
-        }
-        
-        console.log('inputValue:', inputValue);
-        console.log('addTask:', addTask);
-        
         e.preventDefault();
-        addTask(tareas => [...tareas], envio)
+        addTask(inputValue)
     };
 
-    
     return (
         <form onSubmit={onSubmit}>
-
             <input
                 type="text"
                 placeholder="Add tarea"
@@ -33,7 +23,6 @@ export const AgregarTareaForm = ({ addTask }) => {
                 value={inputValue}
                 onChange={onInputChange}
                 />
-
             {/* <input type="submit" value="Submit" /> */}
             {/* <AgregarTareaInput tareas={setArrList}></AgregarTareaInput> */}
         </form>

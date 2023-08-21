@@ -7,19 +7,21 @@ import './css/App.css'
 import {Component1} from './components/Component1'
 import {Component2} from './components/Component2'
 import {ComponentEvento} from './components/ComponentEvento'
-import {Condicionales} from './components/Condicionales'
+import {Condicionales} from './components/Condicionales';
 
 function App() {
 
   return (
     <>
+
       <Condicionales></Condicionales>
 
       <ComponentEvento value = {10} ></ComponentEvento>
 
       <Component1></Component1>
 
-      <Component2 ></Component2>
+      <Component2></Component2>
+
       <Component2 titulo="titulo from App.jsX"></Component2>
 
 

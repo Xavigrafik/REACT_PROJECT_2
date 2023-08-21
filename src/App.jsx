@@ -8,11 +8,14 @@ import {Component1} from './components/Component1'
 import {Component2} from './components/Component2'
 import {ComponentEvento} from './components/ComponentEvento'
 import {Condicionales} from './components/Condicionales';
+import {UsersApp} from './components/UsersApp';
 
 function App() {
 
   return (
     <>
+
+      <UsersApp></UsersApp>
 
       <Condicionales></Condicionales>
 

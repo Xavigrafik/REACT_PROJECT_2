@@ -1,20 +1,23 @@
 import { useState } from "react"
 
-export const AgregarTareaInput = () => {
+export const AgregarTareaInput = ({tareas}) => {
 
-    const [inputValue, setinputValue] = useState('')
+    // const [inputValue, setinputValue] = useState('')
 
     const onInputChange = (e) => {
-        // console.log(inputValue);
-        setinputValue(e.target.value)
+
+      console.log(tareas);
+      // setinputValue(e.target.value)
+
     }
-  return (
-    <input
-        type="text" 
-        placeholder="Add tarea"
-        className="mb-3"
-        value={inputValue}
-        onChange={(e)=>{onInputChange(e)}}
-    />
-  )
+
+    return (
+      <input
+          type="text" 
+          placeholder="Add tarea"
+          className="mb-3"
+          value={inputValue}
+          onChange={(e)=>{onInputChange(e)}}
+      />
+    )
 }

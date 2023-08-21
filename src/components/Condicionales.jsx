@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
-import {AgregarTareaInput} from './AgregarTareaInput';
+import {AgregarTareaForm} from './AgregarTareaForm';
 
 export const Condicionales = () => {
 
@@ -26,19 +26,17 @@ export const Condicionales = () => {
         setArrList([...arrList, {nombre: 'Desde Boton', visto:false} ]) // agrega un elemento al array
     }
 
-    const onSubmit = (e)=>{
-        e.preventDefault();
-        console.log('Submit Form');
+    const onAddTask (val) => {
+        console.log(val);
         
     }
 
     return (
         <div className='component'>
             <h3>COMPONENT CONDICIONALES</h3>
-            <form onSubmit={onSubmit}>
-                <AgregarTareaInput></AgregarTareaInput>
-                <input type="submit" value="Submit" />
-            </form>
+
+            <AgregarTareaForm addTask={setArrList}></AgregarTareaForm>
+
             <ul className="list-unstyled">
                 {arrList.map( item => <Item key={item.nombre} nombre={item.nombre} visto={item.visto}></Item>)}
             </ul>

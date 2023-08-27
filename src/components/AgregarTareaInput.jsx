@@ -2,12 +2,12 @@ import { useState } from "react"
 
 export const AgregarTareaInput = ({tareas}) => {
 
-    // const [inputValue, setinputValue] = useState('')
+    const [inputValue, setinputValue] = useState('')
 
     const onInputChange = (e) => {
 
-      console.log(tareas);
-      // setinputValue(e.target.value)
+      // console.log(tareas);
+      setinputValue(e.target.value)
 
     }
 

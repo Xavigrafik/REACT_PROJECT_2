@@ -29,7 +29,7 @@ export const Condicionales = () => {
 
     const onAddTask = (val) => {
         if (val < 1) {
-            console.error('Input vacio! ');
+            alert('Input vacio!');
             return
         }
         const envio = {

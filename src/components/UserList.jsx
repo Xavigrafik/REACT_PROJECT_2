@@ -8,7 +8,7 @@ export const UserList = ({endPoint}) => {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/${endPoint}`);
             const data = await response.json();
-            console.log(endPoint, data);
+            //console.log(endPoint, data);
             setData(data);
 
         } catch (error) {
@@ -19,7 +19,7 @@ export const UserList = ({endPoint}) => {
     useEffect(() => {
         fetchData();
         // useEffect sirve para llamar una vez al inicio o para llamar cuando cambie una dependencia
-        console.log('useEffect OK');
+        // console.log('useEffect OK');
      }, [endPoint])
 
 
@@ -27,8 +27,13 @@ export const UserList = ({endPoint}) => {
         <ul>
             { endPoint == 'users'
                 ? data.map(item => <li key={item.id}>{item.name}</li>)
-                : data.map(item => <li className='small border-bottom m-0' key={item.id}>{item.body} </li>)
+                : data.map((item) => {
+                        if (item.id <= 10) {
+                            return <li className='small border-bottom m-0' key={item.id}>{item.body}</li>}
+                        })
+                        
             }
+
         </ul>
     );
 };

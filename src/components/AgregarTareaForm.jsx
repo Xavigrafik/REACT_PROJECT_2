@@ -1,17 +1,20 @@
 import { useState } from 'react';
-// import {AgregarTareaInput} from './AgregarTareaInput';
+import {AgregarTareaInput} from './AgregarTareaInput';
 
 export const AgregarTareaForm = ({ addTask }) => {
 
     const [inputValue, setInputValue] = useState('');
 
+    const [arrList, setArrList] = useState('')
+
     const onInputChange = (e) => {
         setInputValue(e.target.value)
     }
-
+    
     const onSubmit = (e) => {
         e.preventDefault();
         addTask(inputValue)
+        setInputValue('') // clear input
     };
 
     return (
@@ -23,7 +26,8 @@ export const AgregarTareaForm = ({ addTask }) => {
                 value={inputValue}
                 onChange={onInputChange}
                 />
-            {/* <input type="submit" value="Submit" /> */}
+            <input type="submit" value="Submit" />
+            <hr />
             {/* <AgregarTareaInput tareas={setArrList}></AgregarTareaInput> */}
         </form>
     );
